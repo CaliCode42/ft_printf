@@ -6,11 +6,12 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 00:01:57 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 15:51:22 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 18:40:23 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 #include "ft_printf.h"
 
 void	ft_check_prefix(t_list *list)
@@ -40,14 +41,44 @@ void	ft_check_prefix(t_list *list)
 	list->format.prefix_checked = 1;
 }
 
+static void	ft_handle_precision_str(t_list *list, char *str)
+{
+	int	i;
+
+	i = 0;
+	if (list->format.precision == 0)
+	{
+		ft_putformat(list, '\0');
+	}
+	else
+	{
+		while (i < list->format.precision)
+		{
+			ft_putformat(list, str[i]);
+			i++;
+		}
+	}
+}
+
 void	ft_putstr(t_list *list, char *str)
 {
+	int	precision;
+
+	precision = list->format.precision;
 	if (!str)
 		return ;
 	ft_check_prefix(list);
-	while (*str)
+	if (list->format.specifier == 's'
+		&& precision >= 0 && precision < ft_strlen(str))
 	{
-		ft_putformat(list, *str);
-		str++;
+		ft_handle_precision_str(list, str);
+	}
+	else
+	{
+		while (*str)
+		{
+			ft_putformat(list, *str);
+			str++;
+		}
 	}
 }

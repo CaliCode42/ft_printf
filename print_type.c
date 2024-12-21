@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:57:35 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 18:03:58 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 18:32:05 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,22 @@ void	ft_printchar(t_list *list, int c, char pad)
 
 static void	ft_check_zeropad(t_list *list, char *str)
 {
+	int	str_len;
+
+	if (list->format.specifier == 's')
+		str_len = ft_strlen(list->format.str);
+	else if (ft_present("pdiuxX", list->format.specifier))
+		str_len = ft_strlen(list->format.itoa);
 	if (list->format.zero_pad)
 	{
 		ft_check_prefix(list);
-		ft_put_n_char(list, ((list->format.width) - ft_strlen(str)), '0');
-		ft_putstr(list, str);
+		ft_put_n_char(list, ((list->format.width) - str_len), '0');
+		ft_pickstr(list);
 	}
 	else
 	{
-		ft_put_n_char(list, ((list->format.width) - ft_strlen(str)), ' ');
-		ft_putstr(list, str);
+		ft_put_n_char(list, ((list->format.width) - str_len), ' ');
+		ft_pickstr(list);
 	}
 }
 
@@ -63,27 +69,25 @@ void	ft_printstr(t_list *list, char *str)
 {
 	if (!str)
 		str = "(null)";
-	/*if (list->format.str && list->format.is_malloc)
-		ft_free(list, list->format.str);
-	*/list->format.str = str;
-	if (list->format.precision >= 0)
+	if (list->format.precision >= 0 && list->format.specifier != 's')
 		ft_check_precision(list, str);
+	else
+	{
+		if (list->format.specifier == 's')
+			list->format.str = str;
+	}
 	if (list->format.width < 1)
 	{
-		ft_putstr(list, str);
+		ft_pickstr(list);
 		return ;
 	}
 	if (list->format.left_justif)
 	{
-		ft_putstr(list, str);
+		ft_pickstr(list);
 		ft_put_n_char(list, ((list->format.width) - ft_strlen(str)), ' ');
 	}
 	else
 		ft_check_zeropad(list, str);
-	/*if (list->format.str && list->format.is_malloc)
-		ft_free(list, list->format.str);
-	if (list->format.itoa)
-		free(list->format.itoa);*/
 }
 
 void	ft_print_nb(t_list *list, char speci, char pad)

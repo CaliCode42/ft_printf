@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:24:18 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 18:02:38 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:22:11 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_check_prefix(t_list *list);
 void	ft_check_width(t_list *list);
 void	ft_putstr(t_list *list, char *str);
 void	ft_check_precision(t_list *list, char *str);
+void	ft_pickstr(t_list *list);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	ft_fill_withzero(t_list *list, char *str, size_t n);
 void	ft_update_itoa(t_list *list, char const *s1, char const *s2);

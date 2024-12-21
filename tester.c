@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:45:59 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 01:27:49 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 00:06:15 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,3 +214,9 @@ int	main(void)
 		printf("real_function : [%%].\n"));
 	printf("\n");
 }
+
+	/*printf("\n\n");
+	printf("ft_pickstr : list->format.str = [%s]", list->format.str);
+	printf("\n\n");
+	printf("ft_pickstr : list->format.itoa = [%s]", list->format.itoa);
+	printf("\n\n");*/
