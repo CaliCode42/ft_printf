@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:24:18 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 18:46:32 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 18:53:51 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void	ft_check_width(t_list *list);
 void	ft_putstr(t_list *list, char *str);
 void	ft_check_precision(t_list *list, char *str);
 void	ft_pickstr(t_list *list);
-void	ft_fill_withzero(t_list *list, char *str, size_t n);
+void	ft_fill_withzero(char *str, size_t n);
 void	ft_update_itoa(t_list *list, char const *s1, char const *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
-void	ft_print_nb(t_list *list, char speci, char pad);
+void	ft_print_nb(t_list *list, char speci);
 void	ft_convert_nb(t_list *list, char speci);
 char	*ft_itoa_base(t_list *list, unsigned long nb);
 int		ft_strcpy(t_list *list, char *src);

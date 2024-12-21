@@ -6,12 +6,20 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:17:03 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 17:53:48 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 20:19:51 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*static char	*ft_zero_case(t_list *list, unsigned long nb)
+{
+	char	*result;
+
+	result = malloc(sizeof(char) * 2);
+	result = "0";
+}
+*/
 char	*ft_itoa_base(t_list *list, unsigned long nb)
 {
 	char			*result;
@@ -20,8 +28,6 @@ char	*ft_itoa_base(t_list *list, unsigned long nb)
 	unsigned long	tmp;
 
 	base_len = ft_strlen(list->format.base);
-	if (nb == 0)
-		return ("0");
 	res_len = 1;
 	tmp = nb;
 	while (tmp >= base_len)

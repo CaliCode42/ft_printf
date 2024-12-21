@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 02:40:04 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 18:35:41 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 20:39:50 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ static void	ft_handle_precision_nb(t_list *list, char *str)
 		copy = malloc(sizeof(char) * precision + 1);
 		if (!copy)
 			return ;
-		ft_fill_withzero(list, copy, (precision - str_len));
+		ft_fill_withzero(copy, (precision - str_len));
 		ft_update_itoa(list, copy, list->format.itoa);
+		free(copy);
 	}
 	return ;
 }

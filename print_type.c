@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:57:35 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 18:32:05 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 19:55:44 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_printchar(t_list *list, int c, char pad)
 		ft_put_n_char(list, 1, (char)c);
 }
 
-static void	ft_check_zeropad(t_list *list, char *str)
+static void	ft_check_zeropad(t_list *list)
 {
 	int	str_len;
 
@@ -87,10 +87,10 @@ void	ft_printstr(t_list *list, char *str)
 		ft_put_n_char(list, ((list->format.width) - ft_strlen(str)), ' ');
 	}
 	else
-		ft_check_zeropad(list, str);
+		ft_check_zeropad(list);
 }
 
-void	ft_print_nb(t_list *list, char speci, char pad)
+void	ft_print_nb(t_list *list, char speci)
 {
 	ft_convert_nb(list, speci);
 	if (list->format.itoa)
@@ -98,4 +98,6 @@ void	ft_print_nb(t_list *list, char speci, char pad)
 		ft_check_width(list);
 		ft_printstr(list, list->format.itoa);
 	}
+	if (list->format.itoa)
+		free(list->format.itoa);
 }

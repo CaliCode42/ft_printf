@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:45:59 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 00:06:15 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 20:38:27 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,9 +160,9 @@ void	ft_test_otherflags(int nb)
 		printf("real_function : This is an int [%0-10i].\n", nb));
 	printf("testing dot :\n");
 	printf("\tmine_function = %d\n",
-		ft_printf("mine_function : This is an int [%.1d].\n", nb));
+		ft_printf("mine_function : This is an int [%.2d].\n", nb));
 	printf("\treal_function = %d\n",
-		printf("real_function : This is an int [%.1d].\n", nb));
+		printf("real_function : This is an int [%.2d].\n", nb));
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is a str [%.s].\n", "-"));
 	printf("\treal_function = %d\n",
@@ -187,7 +187,7 @@ void	ft_test_otherflags(int nb)
 
 int	main(void)
 {
-	printf("testing char :\n");
+	/*printf("testing char :\n");
 	printf("\n");
 	ft_test_char('A');
 	printf("_______________________________________________________");
@@ -204,15 +204,15 @@ int	main(void)
 	printf("_______________________________________________________");
 	printf("\n");
 	printf("testing other flags :\n");
-	printf("\n");
-	ft_test_otherflags(42);
-	printf("_______________________________________________________");
+	printf("\n");*/
+	ft_test_otherflags(1);
+	/*printf("_______________________________________________________");
 	printf("\n");
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : [%%].\n"));
 	printf("\treal_function = %d\n",
 		printf("real_function : [%%].\n"));
-	printf("\n");
+	printf("\n");*/
 }
 
 	/*printf("\n\n");

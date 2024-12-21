@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:51:18 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 15:46:01 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/21 18:54:20 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_render_format(t_list *list)
 	else if (specifier == 's')
 		ft_printstr(list, va_arg(list->ap, char *));
 	if (ft_present("pdiuxX", specifier))
-		ft_print_nb(list, specifier, pad);
+		ft_print_nb(list, specifier);
 }
