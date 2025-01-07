@@ -6,14 +6,14 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:39:56 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/18 17:40:50 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/22 03:40:02 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <unistd.h> 
 
-static void	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

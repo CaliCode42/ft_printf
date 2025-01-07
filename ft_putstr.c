@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 00:01:57 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 18:40:23 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/22 03:41:03 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ static void	ft_handle_precision_str(t_list *list, char *str)
 	i = 0;
 	if (list->format.precision == 0)
 	{
-		ft_putformat(list, '\0');
+		ft_putchar('\0');
+		return ;
 	}
 	else
 	{

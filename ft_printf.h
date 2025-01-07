@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:24:18 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 18:53:51 by tcali            ###   ########.fr       */
+/*   Updated: 2024/12/22 03:39:59 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	*ft_itoa_base(t_list *list, unsigned long nb);
 int		ft_strcpy(t_list *list, char *src);
 int		ft_strlen(const char *str);
 void	ft_free(t_list *list, char *str);
+void	ft_putchar(char c);
 void	ft_putformat(t_list *list, char c);
 
 #endif

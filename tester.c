@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:45:59 by tcali             #+#    #+#             */
-/*   Updated: 2024/12/21 20:38:27 by tcali            ###   ########.fr       */
+/*   Updated: 2025/01/07 11:32:00 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	ft_test_otherflags(int nb)
 
 	n = 10;
 	ptr = 42;
-	printf("testing hash :\n");
+	/*printf("testing hash :\n");
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is an hexa [%#x].\n", nb));
 	printf("\treal_function = %d\n",
@@ -147,6 +147,14 @@ void	ft_test_otherflags(int nb)
 	printf("\n");
 	printf("testing zero padding :\n");
 	printf("\tmine_function = %d\n",
+		ft_printf("mine_function : This is an hexa [%010x].\n", nb));
+	printf("\treal_function = %d\n",
+		printf("real_function : This is an hexa [%010x].\n", nb));
+	printf("\tmine_function = %d\n",
+		ft_printf("mine_function : This is an HEXA [%010X].\n", nb));
+	printf("\treal_function = %d\n",
+		printf("real_function : This is an HEXA [%010X].\n", nb));
+	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is an hexa [%010p].\n", ptr));
 	printf("\treal_function = %d\n",
 		printf("real_function : This is an hexa [%010p].\n", ptr));
@@ -157,7 +165,7 @@ void	ft_test_otherflags(int nb)
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is an int [%0-10i].\n", nb));
 	printf("\treal_function = %d\n",
-		printf("real_function : This is an int [%0-10i].\n", nb));
+		printf("real_function : This is an int [%0-10i].\n", nb));*/
 	printf("testing dot :\n");
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is an int [%.2d].\n", nb));
@@ -167,6 +175,10 @@ void	ft_test_otherflags(int nb)
 		ft_printf("mine_function : This is a str [%.s].\n", "-"));
 	printf("\treal_function = %d\n",
 		printf("real_function : This is a str [%.s].\n", "-"));
+	printf("\tmine_function = %d\n",
+		ft_printf("mine_function : This is a str [ %.s ].\n", "-"));
+	printf("\treal_function = %d\n",
+		printf("real_function : This is a str [ %.s ].\n", "-"));
 	printf("\tmine_function = %d\n",
 		ft_printf("mine_function : This is a str [%.1s] [%.2s] [%.3s] [%.4s].\n", " - ", "", "4", ""));
 	printf("\treal_function = %d\n",
@@ -205,7 +217,7 @@ int	main(void)
 	printf("\n");
 	printf("testing other flags :\n");
 	printf("\n");*/
-	ft_test_otherflags(1);
+	ft_test_otherflags(4294967295);
 	/*printf("_______________________________________________________");
 	printf("\n");
 	printf("\tmine_function = %d\n",
